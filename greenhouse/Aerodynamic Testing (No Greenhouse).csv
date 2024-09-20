@@ -1,0 +1,21 @@
+Column1,Column2,Column3,Column4,Column5,Column6,Column7,Column8,Column9,Column10,Column11,Column12,Column13
+,Date (MM/DD/YYYY),09/18/2024,,,,,,Page,______ of _______,,,
+,Time (HH:MM),18:45,,,,,,,,,,
+,Group name and persons in,"Group 1:   Aytahn Ben-avi, Diogo Filipe Cravo da Costa, Trey Gower, Tom van Aaken",,,,,,,,,,
+,attendance,,,,,,,,,,,
+,Notes and description,"Temperature: 25.2 C, Humidity: 47.6%, Pressure: 100068 Pa",,,,,,,,,,
+#,File name,RPM,"wind
+speed
+(m/s)","Angle
+of
+attack",Notes,Fx (N),Fy (N),Fz (N),,Tx (N),Ty (N),Tz (N)
+,Empty_0_1,0.0000,0.0000,0.0000,,0.0000,0.0000,0.0050,,0.0000,0.0000,0.0000
+,Empty_15_1,451.0000,14.8,,,0.0170,-0.0070,-0.5450,,0.0000,-0.0010,0.0000
+,Empty_21.2_1,633.0000,20.8000,,,0.03,-0.009,-0.884,,0.0000,-0.001,0.0000
+,Empty_30_1,889.0000,29.1800,,,0.059,-0.022,-1.35,,0.001,-0.003,0.0000
+,Empty_21.2_2,633.0000,20.7300,,,0.029,-0.009,-0.805,,0.0000,-0.002,0.0000
+,Empty_15_2,451.0000,14.7100,,,0.008,-0.002,-0.483,,0.0000,-0.001,0.0000
+,Empty_30_2,889.0000,29.2000,,,0.055,-0.022,-1.2930,,0.001,-0.003,0.0000
+,Empty_0_2,0.0000,0.0000,0.0000,,-0.014,0.006,0.017,,0,0,0
+,,,,,,,,,,,,
+,,,,,,,,,,,,

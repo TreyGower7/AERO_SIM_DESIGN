@@ -43,7 +43,7 @@
 # Other commands must follow all #SBATCH directives...
 
 module purge
-module load intel/19.0.5  impi/19.0.5  openfoam/7.0
+module load intel/19.1.1  impi/19.0.9 openfoam/7.0
 module list
 
 pwd

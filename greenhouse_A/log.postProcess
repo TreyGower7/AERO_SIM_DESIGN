@@ -1,0 +1,118 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7
+Exec   : postProcess -parallel -field Phi -funcs ( grad(Phi) mag(grad(Phi)) xaxis arc )
+Date   : Sep 23 2024
+Time   : 18:47:20
+Host   : "c202-021.frontera.tacc.utexas.edu"
+PID    : 120960
+I/O    : uncollated
+Case   : /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A
+nProcs : 32
+Slaves : 
+31
+(
+"c202-021.frontera.tacc.utexas.edu.120961"
+"c202-021.frontera.tacc.utexas.edu.120962"
+"c202-021.frontera.tacc.utexas.edu.120963"
+"c202-021.frontera.tacc.utexas.edu.120964"
+"c202-021.frontera.tacc.utexas.edu.120965"
+"c202-021.frontera.tacc.utexas.edu.120966"
+"c202-021.frontera.tacc.utexas.edu.120967"
+"c202-021.frontera.tacc.utexas.edu.120968"
+"c202-021.frontera.tacc.utexas.edu.120969"
+"c202-021.frontera.tacc.utexas.edu.120970"
+"c202-021.frontera.tacc.utexas.edu.120971"
+"c202-021.frontera.tacc.utexas.edu.120972"
+"c202-021.frontera.tacc.utexas.edu.120973"
+"c202-021.frontera.tacc.utexas.edu.120974"
+"c202-021.frontera.tacc.utexas.edu.120975"
+"c202-021.frontera.tacc.utexas.edu.120976"
+"c202-021.frontera.tacc.utexas.edu.120977"
+"c202-021.frontera.tacc.utexas.edu.120978"
+"c202-021.frontera.tacc.utexas.edu.120979"
+"c202-021.frontera.tacc.utexas.edu.120980"
+"c202-021.frontera.tacc.utexas.edu.120981"
+"c202-021.frontera.tacc.utexas.edu.120982"
+"c202-021.frontera.tacc.utexas.edu.120983"
+"c202-021.frontera.tacc.utexas.edu.120984"
+"c202-021.frontera.tacc.utexas.edu.120985"
+"c202-021.frontera.tacc.utexas.edu.120986"
+"c202-021.frontera.tacc.utexas.edu.120987"
+"c202-021.frontera.tacc.utexas.edu.120988"
+"c202-021.frontera.tacc.utexas.edu.120989"
+"c202-021.frontera.tacc.utexas.edu.120990"
+"c202-021.frontera.tacc.utexas.edu.120991"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading set description:
+    line
+
+Reading set description:
+    wall
+
+Time = 0
+
+Reading fields:
+    volScalarFields: p Phi
+
+Executing functionObjects
+    functionObjects::grad grad(Phi) writing field: grad(Phi)
+--> FOAM Warning :     functionObjects::mag mag(grad(Phi)) cannot find required object grad(Phi) of type volScalarField
+--> FOAM Warning :     functionObjects::mag mag(grad(Phi)) cannot find required object grad(Phi) of type surfaceScalarField
+    functionObjects::mag mag(grad(Phi)) writing field: mag(grad(Phi))
+
+End
+
+Finalising parallel run

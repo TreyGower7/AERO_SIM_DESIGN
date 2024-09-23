@@ -1,0 +1,12 @@
+/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A
+Mon Sep 23 18:45:06 CDT 2024
+Running surfaceFeatures on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A
+Running blockMesh on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A
+Running checkMesh on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A
+Running decomposePar on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A
+Running snappyHexMesh in parallel on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A using 32 processes
+Running checkMesh in parallel on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A using 32 processes
+Running patchSummary in parallel on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A using 32 processes
+Running potentialFoam in parallel on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A using 32 processes
+Running postProcess in parallel on /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/v7/tutorials/potentialFoam/greenhouse_A using 32 processes
+Mon Sep 23 18:47:23 CDT 2024

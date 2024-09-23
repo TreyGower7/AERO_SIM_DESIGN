@@ -1,0 +1,154 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+15
+(
+    yMinusWall
+    {
+        type            patch;
+        nFaces          0;
+        startFace       36797;
+    }
+    yPlusWall
+    {
+        type            patch;
+        nFaces          0;
+        startFace       36797;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          6;
+        startFace       36797;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          0;
+        startFace       36803;
+    }
+    bottomWall
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          986;
+        startFace       36803;
+    }
+    topWall
+    {
+        type            patch;
+        nFaces          0;
+        startFace       37789;
+    }
+    greenhouse
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          0;
+        startFace       37789;
+    }
+    procBoundary8to4
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          746;
+        startFace       37789;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    4;
+    }
+    procBoundary8to9
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          353;
+        startFace       38535;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    9;
+    }
+    procBoundary8to12
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          443;
+        startFace       38888;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    12;
+    }
+    procBoundary8to13
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          215;
+        startFace       39331;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    13;
+    }
+    procBoundary8to20
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          49;
+        startFace       39546;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    20;
+    }
+    procBoundary8to24
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          792;
+        startFace       39595;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    24;
+    }
+    procBoundary8to25
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          197;
+        startFace       40387;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    25;
+    }
+    procBoundary8to29
+    {
+        type            processor;
+        inGroups        List<word> 1(processor);
+        nFaces          55;
+        startFace       40584;
+        matchTolerance  0.0001;
+        transform       unknown;
+        myProcNo        8;
+        neighbProcNo    29;
+    }
+)
+
+// ************************************************************************* //

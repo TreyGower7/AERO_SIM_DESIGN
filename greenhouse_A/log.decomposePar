@@ -1,0 +1,505 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7
+Exec   : decomposePar -copyZero
+Date   : Sep 23 2024
+Time   : 18:46:08
+Host   : "c202-021.frontera.tacc.utexas.edu"
+PID    : 83416
+I/O    : uncollated
+Case   : /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+ Foam::decompositionMethod::New 
+{
+    numberOfSubdomains 32;
+    method          hierarchical;
+    simpleCoeffs
+    {
+        n               ( 4 4 2 );
+        delta           0.001;
+    }
+    hierarchicalCoeffs
+    {
+        n               ( 4 4 2 );
+        delta           0.001;
+        order           xyz;
+    }
+    manualCoeffs
+    {
+        dataFile        "cellDecomposition";
+    }
+}
+
+Selecting decompositionMethod hierarchical
+
+Finished decomposition in 0.01 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 1270
+    Number of faces shared with processor 1 = 110
+    Number of faces shared with processor 4 = 111
+    Number of faces shared with processor 16 = 141
+    Number of processor patches = 3
+    Number of processor faces = 362
+    Number of boundary faces = 362
+
+Processor 1
+    Number of cells = 1270
+    Number of faces shared with processor 0 = 110
+    Number of faces shared with processor 2 = 111
+    Number of faces shared with processor 5 = 110
+    Number of faces shared with processor 16 = 10
+    Number of faces shared with processor 17 = 141
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 2
+    Number of cells = 1270
+    Number of faces shared with processor 1 = 111
+    Number of faces shared with processor 3 = 111
+    Number of faces shared with processor 6 = 110
+    Number of faces shared with processor 17 = 9
+    Number of faces shared with processor 18 = 141
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 3
+    Number of cells = 1270
+    Number of faces shared with processor 2 = 111
+    Number of faces shared with processor 7 = 111
+    Number of faces shared with processor 18 = 10
+    Number of faces shared with processor 19 = 141
+    Number of processor patches = 4
+    Number of processor faces = 373
+    Number of boundary faces = 351
+
+Processor 4
+    Number of cells = 1270
+    Number of faces shared with processor 0 = 111
+    Number of faces shared with processor 5 = 110
+    Number of faces shared with processor 8 = 111
+    Number of faces shared with processor 16 = 9
+    Number of faces shared with processor 20 = 141
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 5
+    Number of cells = 1270
+    Number of faces shared with processor 1 = 110
+    Number of faces shared with processor 4 = 110
+    Number of faces shared with processor 6 = 111
+    Number of faces shared with processor 9 = 111
+    Number of faces shared with processor 17 = 11
+    Number of faces shared with processor 20 = 11
+    Number of faces shared with processor 21 = 141
+    Number of processor patches = 7
+    Number of processor faces = 605
+    Number of boundary faces = 121
+
+Processor 6
+    Number of cells = 1270
+    Number of faces shared with processor 2 = 110
+    Number of faces shared with processor 5 = 111
+    Number of faces shared with processor 7 = 110
+    Number of faces shared with processor 10 = 111
+    Number of faces shared with processor 18 = 10
+    Number of faces shared with processor 21 = 10
+    Number of faces shared with processor 22 = 141
+    Number of processor patches = 7
+    Number of processor faces = 603
+    Number of boundary faces = 121
+
+Processor 7
+    Number of cells = 1270
+    Number of faces shared with processor 3 = 111
+    Number of faces shared with processor 6 = 110
+    Number of faces shared with processor 11 = 111
+    Number of faces shared with processor 19 = 9
+    Number of faces shared with processor 22 = 11
+    Number of faces shared with processor 23 = 141
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 8
+    Number of cells = 1270
+    Number of faces shared with processor 4 = 111
+    Number of faces shared with processor 9 = 110
+    Number of faces shared with processor 12 = 111
+    Number of faces shared with processor 20 = 9
+    Number of faces shared with processor 24 = 141
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 9
+    Number of cells = 1270
+    Number of faces shared with processor 5 = 111
+    Number of faces shared with processor 8 = 110
+    Number of faces shared with processor 10 = 110
+    Number of faces shared with processor 13 = 111
+    Number of faces shared with processor 21 = 9
+    Number of faces shared with processor 24 = 11
+    Number of faces shared with processor 25 = 141
+    Number of processor patches = 7
+    Number of processor faces = 603
+    Number of boundary faces = 121
+
+Processor 10
+    Number of cells = 1270
+    Number of faces shared with processor 6 = 111
+    Number of faces shared with processor 9 = 110
+    Number of faces shared with processor 11 = 110
+    Number of faces shared with processor 14 = 110
+    Number of faces shared with processor 22 = 9
+    Number of faces shared with processor 25 = 10
+    Number of faces shared with processor 26 = 141
+    Number of processor patches = 7
+    Number of processor faces = 601
+    Number of boundary faces = 121
+
+Processor 11
+    Number of cells = 1270
+    Number of faces shared with processor 7 = 111
+    Number of faces shared with processor 10 = 110
+    Number of faces shared with processor 15 = 111
+    Number of faces shared with processor 23 = 9
+    Number of faces shared with processor 26 = 11
+    Number of faces shared with processor 27 = 141
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 12
+    Number of cells = 1270
+    Number of faces shared with processor 8 = 111
+    Number of faces shared with processor 13 = 110
+    Number of faces shared with processor 24 = 9
+    Number of faces shared with processor 28 = 141
+    Number of processor patches = 4
+    Number of processor faces = 371
+    Number of boundary faces = 353
+
+Processor 13
+    Number of cells = 1270
+    Number of faces shared with processor 9 = 111
+    Number of faces shared with processor 12 = 110
+    Number of faces shared with processor 14 = 111
+    Number of faces shared with processor 25 = 10
+    Number of faces shared with processor 28 = 10
+    Number of faces shared with processor 29 = 141
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 14
+    Number of cells = 1270
+    Number of faces shared with processor 10 = 110
+    Number of faces shared with processor 13 = 111
+    Number of faces shared with processor 15 = 111
+    Number of faces shared with processor 26 = 11
+    Number of faces shared with processor 29 = 9
+    Number of faces shared with processor 30 = 141
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 15
+    Number of cells = 1270
+    Number of faces shared with processor 11 = 111
+    Number of faces shared with processor 14 = 111
+    Number of faces shared with processor 27 = 9
+    Number of faces shared with processor 30 = 10
+    Number of faces shared with processor 31 = 141
+    Number of processor patches = 5
+    Number of processor faces = 382
+    Number of boundary faces = 342
+
+Processor 16
+    Number of cells = 1271
+    Number of faces shared with processor 0 = 141
+    Number of faces shared with processor 1 = 10
+    Number of faces shared with processor 4 = 9
+    Number of faces shared with processor 17 = 111
+    Number of faces shared with processor 20 = 111
+    Number of processor patches = 5
+    Number of processor faces = 382
+    Number of boundary faces = 342
+
+Processor 17
+    Number of cells = 1271
+    Number of faces shared with processor 1 = 141
+    Number of faces shared with processor 2 = 9
+    Number of faces shared with processor 5 = 11
+    Number of faces shared with processor 16 = 111
+    Number of faces shared with processor 18 = 111
+    Number of faces shared with processor 21 = 110
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 18
+    Number of cells = 1271
+    Number of faces shared with processor 2 = 141
+    Number of faces shared with processor 3 = 10
+    Number of faces shared with processor 6 = 10
+    Number of faces shared with processor 17 = 111
+    Number of faces shared with processor 19 = 110
+    Number of faces shared with processor 22 = 111
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 19
+    Number of cells = 1271
+    Number of faces shared with processor 3 = 141
+    Number of faces shared with processor 7 = 9
+    Number of faces shared with processor 18 = 110
+    Number of faces shared with processor 23 = 111
+    Number of processor patches = 4
+    Number of processor faces = 371
+    Number of boundary faces = 353
+
+Processor 20
+    Number of cells = 1271
+    Number of faces shared with processor 4 = 141
+    Number of faces shared with processor 5 = 11
+    Number of faces shared with processor 8 = 9
+    Number of faces shared with processor 16 = 111
+    Number of faces shared with processor 21 = 110
+    Number of faces shared with processor 24 = 111
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 21
+    Number of cells = 1271
+    Number of faces shared with processor 5 = 141
+    Number of faces shared with processor 6 = 10
+    Number of faces shared with processor 9 = 9
+    Number of faces shared with processor 17 = 110
+    Number of faces shared with processor 20 = 110
+    Number of faces shared with processor 22 = 110
+    Number of faces shared with processor 25 = 111
+    Number of processor patches = 7
+    Number of processor faces = 601
+    Number of boundary faces = 121
+
+Processor 22
+    Number of cells = 1271
+    Number of faces shared with processor 6 = 141
+    Number of faces shared with processor 7 = 11
+    Number of faces shared with processor 10 = 9
+    Number of faces shared with processor 18 = 111
+    Number of faces shared with processor 21 = 110
+    Number of faces shared with processor 23 = 110
+    Number of faces shared with processor 26 = 111
+    Number of processor patches = 7
+    Number of processor faces = 603
+    Number of boundary faces = 121
+
+Processor 23
+    Number of cells = 1271
+    Number of faces shared with processor 7 = 141
+    Number of faces shared with processor 11 = 9
+    Number of faces shared with processor 19 = 111
+    Number of faces shared with processor 22 = 110
+    Number of faces shared with processor 27 = 111
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 24
+    Number of cells = 1271
+    Number of faces shared with processor 8 = 141
+    Number of faces shared with processor 9 = 11
+    Number of faces shared with processor 12 = 9
+    Number of faces shared with processor 20 = 111
+    Number of faces shared with processor 25 = 110
+    Number of faces shared with processor 28 = 111
+    Number of processor patches = 6
+    Number of processor faces = 493
+    Number of boundary faces = 231
+
+Processor 25
+    Number of cells = 1271
+    Number of faces shared with processor 9 = 141
+    Number of faces shared with processor 10 = 10
+    Number of faces shared with processor 13 = 10
+    Number of faces shared with processor 21 = 111
+    Number of faces shared with processor 24 = 110
+    Number of faces shared with processor 26 = 111
+    Number of faces shared with processor 29 = 110
+    Number of processor patches = 7
+    Number of processor faces = 603
+    Number of boundary faces = 121
+
+Processor 26
+    Number of cells = 1271
+    Number of faces shared with processor 10 = 141
+    Number of faces shared with processor 11 = 11
+    Number of faces shared with processor 14 = 11
+    Number of faces shared with processor 22 = 111
+    Number of faces shared with processor 25 = 111
+    Number of faces shared with processor 27 = 110
+    Number of faces shared with processor 30 = 110
+    Number of processor patches = 7
+    Number of processor faces = 605
+    Number of boundary faces = 121
+
+Processor 27
+    Number of cells = 1271
+    Number of faces shared with processor 11 = 141
+    Number of faces shared with processor 15 = 9
+    Number of faces shared with processor 23 = 111
+    Number of faces shared with processor 26 = 110
+    Number of faces shared with processor 31 = 111
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 28
+    Number of cells = 1271
+    Number of faces shared with processor 12 = 141
+    Number of faces shared with processor 13 = 10
+    Number of faces shared with processor 24 = 111
+    Number of faces shared with processor 29 = 111
+    Number of processor patches = 4
+    Number of processor faces = 373
+    Number of boundary faces = 351
+
+Processor 29
+    Number of cells = 1271
+    Number of faces shared with processor 13 = 141
+    Number of faces shared with processor 14 = 9
+    Number of faces shared with processor 25 = 110
+    Number of faces shared with processor 28 = 111
+    Number of faces shared with processor 30 = 111
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 30
+    Number of cells = 1271
+    Number of faces shared with processor 14 = 141
+    Number of faces shared with processor 15 = 10
+    Number of faces shared with processor 26 = 110
+    Number of faces shared with processor 29 = 111
+    Number of faces shared with processor 31 = 110
+    Number of processor patches = 5
+    Number of processor faces = 482
+    Number of boundary faces = 242
+
+Processor 31
+    Number of cells = 1271
+    Number of faces shared with processor 15 = 141
+    Number of faces shared with processor 27 = 111
+    Number of faces shared with processor 30 = 110
+    Number of processor patches = 3
+    Number of processor faces = 362
+    Number of boundary faces = 362
+
+Number of processor faces = 7800
+Max number of cells = 1271 (0.03935458480913026% above average 1270.5)
+Max number of processor patches = 7 (27.27272727272727% above average 5.5)
+Max number of faces between processors = 605 (24.1025641025641% above average 487.5)
+
+Processor 0: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor0/0"
+Processor 1: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor1/0"
+Processor 2: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor2/0"
+Processor 3: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor3/0"
+Processor 4: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor4/0"
+Processor 5: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor5/0"
+Processor 6: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor6/0"
+Processor 7: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor7/0"
+Processor 8: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor8/0"
+Processor 9: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor9/0"
+Processor 10: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor10/0"
+Processor 11: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor11/0"
+Processor 12: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor12/0"
+Processor 13: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor13/0"
+Processor 14: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor14/0"
+Processor 15: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor15/0"
+Processor 16: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor16/0"
+Processor 17: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor17/0"
+Processor 18: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor18/0"
+Processor 19: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor19/0"
+Processor 20: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor20/0"
+Processor 21: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor21/0"
+Processor 22: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor22/0"
+Processor 23: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor23/0"
+Processor 24: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor24/0"
+Processor 25: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor25/0"
+Processor 26: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor26/0"
+Processor 27: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor27/0"
+Processor 28: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor28/0"
+Processor 29: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor29/0"
+Processor 30: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor30/0"
+Processor 31: copying "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/0"
+ to "/work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A/processor31/0"
+
+End
+

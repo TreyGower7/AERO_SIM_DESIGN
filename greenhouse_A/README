@@ -1,0 +1,64 @@
+
+
+
+    Greenhouse
+
+
+    === Overview
+
+
+    A half cylinder of radius R=1 and width W=4 is placed in cross-flow on the bottom wall of a wind-tunnel.
+    The flow is assumed to be irrotational and inviscid. The user can select various angles of attack, measured as
+    the angle between the x-axis and the normal to the cylinder.
+
+    Meshing is carried out with snappyHexMesh, but skipping the addition of layers, which are not needed for an
+    inviscid solution.
+
+    Once the potential flow solution is found (the potential function is Phi), the post processing tools are used
+    to calculate the velocity (as gradient of the potential function) and extract it both along the x-axis (streamwise
+    direction) and along the cylinder surface (on the mid y-plane through the origin).
+
+    A ParaView state file calculates the forces on the half-cylinder by integrating the pressure on the surface.
+
+    A gnuplot script compares the pressure coefficient as a function of the distance upstream of the half cylinder
+    on the midplane to the analytical solution. Also, the pressure coefficient is processed as a function of the angle
+    on the surface.
+
+    The case can be run in both serial and parallel, depending on the number of cells and serial and parallel SLURM
+    submission scripts are provided (openfoam.v7.serial.slurm and openfoam.v7.parallel.slurm).
+
+    
+    === Changing the angle of attack
+
+    In order to change the angle of attack, change the variable
+
+       rotAngle 0.0; // degrees
+    
+    in the file 0/include/rotationAngle
+
+    This will change the blockMeshDict as well as the inlet velocity vectors accordingly.
+
+  
+    === Postprocessing
+
+
+    Once data and results have been obtained, you can execute
+  
+        gnuplot cp.plt
+        gnuplot cp_xaxis.plt
+
+    to generate EPS files of the pressure coefficient as a function of the angle on the surface (mid plane)
+    and along the x-axis upstream of the half cylinder.
+
+    Also, you can load the ParaView states
+
+        forces.pvsm
+        viz.pvsm
+
+    where the first produces the net forces on the half cylinder due to pressure and the second produces
+    a visualization of the flow field.
+
+    EPS and PNG figures are available in pics/
+ 
+
+

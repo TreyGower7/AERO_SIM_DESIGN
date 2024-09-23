@@ -1,0 +1,170 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7
+Exec   : checkMesh -parallel
+Date   : Sep 23 2024
+Time   : 18:46:40
+Host   : "c202-021.frontera.tacc.utexas.edu"
+PID    : 117205
+I/O    : uncollated
+Case   : /work2/09043/tagower/frontera/mainclassrepo/OpenFOAM/OpenFOAM-7/tutorials/potentialFoam/greenhouse_A
+nProcs : 32
+Slaves : 
+31
+(
+"c202-021.frontera.tacc.utexas.edu.117206"
+"c202-021.frontera.tacc.utexas.edu.117207"
+"c202-021.frontera.tacc.utexas.edu.117208"
+"c202-021.frontera.tacc.utexas.edu.117209"
+"c202-021.frontera.tacc.utexas.edu.117210"
+"c202-021.frontera.tacc.utexas.edu.117211"
+"c202-021.frontera.tacc.utexas.edu.117212"
+"c202-021.frontera.tacc.utexas.edu.117213"
+"c202-021.frontera.tacc.utexas.edu.117214"
+"c202-021.frontera.tacc.utexas.edu.117215"
+"c202-021.frontera.tacc.utexas.edu.117216"
+"c202-021.frontera.tacc.utexas.edu.117217"
+"c202-021.frontera.tacc.utexas.edu.117218"
+"c202-021.frontera.tacc.utexas.edu.117219"
+"c202-021.frontera.tacc.utexas.edu.117220"
+"c202-021.frontera.tacc.utexas.edu.117221"
+"c202-021.frontera.tacc.utexas.edu.117222"
+"c202-021.frontera.tacc.utexas.edu.117223"
+"c202-021.frontera.tacc.utexas.edu.117224"
+"c202-021.frontera.tacc.utexas.edu.117225"
+"c202-021.frontera.tacc.utexas.edu.117226"
+"c202-021.frontera.tacc.utexas.edu.117227"
+"c202-021.frontera.tacc.utexas.edu.117228"
+"c202-021.frontera.tacc.utexas.edu.117229"
+"c202-021.frontera.tacc.utexas.edu.117230"
+"c202-021.frontera.tacc.utexas.edu.117231"
+"c202-021.frontera.tacc.utexas.edu.117232"
+"c202-021.frontera.tacc.utexas.edu.117233"
+"c202-021.frontera.tacc.utexas.edu.117234"
+"c202-021.frontera.tacc.utexas.edu.117235"
+"c202-021.frontera.tacc.utexas.edu.117236"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Time = 0
+
+Mesh stats
+    points:           502608
+    faces:            1309160
+    internal faces:   1175453
+    cells:            405785
+    faces per cell:   6.122978917407001
+    boundary patches: 12
+    point zones:      0
+    face zones:       0
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     385718
+    prisms:        2549
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     17518
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            4   5
+            5   81
+            6   6313
+            7   180
+            8   4
+            9   5999
+           10   2
+           11   6
+           12   3344
+           15   1584
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking basic patch addressing...
+                   Patch    Faces   Points
+              yMinusWall      924     1104
+               yPlusWall      924     1104
+                   inlet      924     1104
+                  outlet      924     1104
+              bottomWall    15254    17154
+                 topWall     1936     2304
+              greenhouse    11447    12577
+
+Checking geometry...
+    Overall domain bounding box (-29 -29 0) (29 29.00000000000001 29.00000000000001)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (1.043700460269448e-15 1.782100164382441e-15 -9.532529535715712e-16) OK.
+    Max cell openness = 2.644626232460645e-16 OK.
+    Max aspect ratio = 3.525079080486831 OK.
+    Minimum face area = 0.0001227565379961323. Maximum face area = 1.841269841269867.  Face area magnitudes OK.
+    Min volume = 3.174028037099153e-06. Max volume = 2.455026455026502.  Total volume = 97549.72094189998.  Cell volumes OK.
+    Mesh non-orthogonality Max: 47.12090024392866 average: 6.054643002724482
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 2.571830716461994 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+
+Finalising parallel run

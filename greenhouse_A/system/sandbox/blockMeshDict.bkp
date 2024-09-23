@@ -1,0 +1,132 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+A   10.0; // inlet-section length
+B   5.0;  // test-section length
+C   5.0;  // outlet-section length
+H   10.0; // tunnel height
+W   15.0; // tunnel width
+//
+Nxinlet   21; // nr of cells (inlet-section length)
+Nxtest    11; // nr of cells (test-section length)
+Nxoutlet  11; // nr of cells (outlet-section length) 
+NzH       21; // nr of cells (tunnel height)
+NyW       31; // nr of cells (tunnel width)
+
+// calculate some key coordinates
+//
+x0 #calc "-$A-$B*0.5";
+x1 #calc "-$B*0.5";
+x2 #calc "$B*0.5";
+x3 #calc "$C+$B*0.5";
+//
+y0  #calc "-$W*0.5";
+y4  #calc "$W*0.5";
+//
+z0 0.0;
+z8 #calc "$H";
+
+vertices
+(
+  ( $x0    $y0   $z0 ) //  0
+  ( $x1    $y0   $z0 ) //  1
+  ( $x2    $y0   $z0 ) //  2 
+  ( $x3    $y0   $z0 ) //  3 
+
+  ( $x0    $y4   $z0 ) //  4
+  ( $x1    $y4   $z0 ) //  5
+  ( $x2    $y4   $z0 ) //  6 
+  ( $x3    $y4   $z0 ) //  7 
+
+  ( $x0    $y0   $z8 ) //  8 
+  ( $x1    $y0   $z8 ) //  9
+  ( $x2    $y0   $z8 ) //  10 
+  ( $x3    $y0   $z8 ) //  11
+
+  ( $x0    $y4   $z8 ) //  12
+  ( $x1    $y4   $z8 ) //  13
+  ( $x2    $y4   $z8 ) //  14
+  ( $x3    $y4   $z8 ) //  15
+);
+
+blocks
+(
+    hex (0 1 5 4 8 9 13 12)   ($Nxinlet  $NyW $NzH) simpleGrading (1 1 1) // inlet-section
+    hex (1 2 6 5 9 10 14 13)  ($Nxtest   $NyW $NzH) simpleGrading (1 1 1) // test-section
+    hex (2 3 7 6 10 11 15 14) ($Nxoutlet $NyW $NzH) simpleGrading (1 1 1) // outlet-section
+);
+
+edges
+(
+);
+
+boundary
+(
+    frontAndBack
+    {
+        type patch;
+        faces
+        (
+            (0 1 9 8)
+            (1 2 10 9)
+            (2 3 11 10)
+            (4 5 13 12)
+            (5 6 14 13)
+            (6 7 15 14)
+        );
+    }
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 8 12 4) 
+        );
+    }
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (3 11 15 7)
+        );
+    }
+    lowerWall
+    {
+        type wall;
+        faces
+        (
+            (0 1 5 4)
+            (1 2 6 5)
+            (2 3 7 6)
+        );
+    }
+    upperWall
+    {
+        type patch;
+        faces
+        (
+           (8 9 13 12)
+           (9 10 14 13) 
+           (10 11 15 14)
+        );
+    }
+);
+
+// ************************************************************************* //

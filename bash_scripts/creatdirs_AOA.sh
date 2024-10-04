@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # angles of attack and velocities
-angles_of_attack=(15 30 45)
+angles_of_attack=(0 15 30 45)
 
 # Base directory (adjust this path as needed)
 base_dir="AOA15_0"

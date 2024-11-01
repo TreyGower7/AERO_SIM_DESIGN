@@ -1,0 +1,13 @@
+# username: treygower
+# date: 2024-11-01 15:50:03
+# host: ase-a14261-lt.lan
+# dir: ./AERO_SIM_DESIGN/wing/data_ascii/
+#
+# Reference area = 4.032250e-03 m2; Density = 1.177212e+00 kg/m3; Dynamic viscosity = 1.909558e-05 Pa-s; Characteristic length = 3.175000e-02 m
+#
+# (1) U (m/s); (2) Re; (3) qinf (Pa); # (4) Cx (N), -2.5 deg;
+# (5) Cx (N), 0 deg;
+# (6) Cx (N), 2.5 deg;
+# (7) Cx (N), 5 deg;
+# (8) Cx (N), 10 deg;
+# (9) Cx (N), 12.5 deg;

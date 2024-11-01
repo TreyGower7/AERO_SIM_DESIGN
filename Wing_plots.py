@@ -21,6 +21,8 @@ def clean_data(dataframes, keyword='Unnamed'):
         cleaned_data.append(cleaned_df)
     return cleaned_data
 
+#def cp_vs_x():
+
 def main():
     filepath = '/Users/treygower/Library/CloudStorage/OneDrive-TheUniversityofTexasatAustin/Aerodynamic_Testing_Wing.xlsx'
     
@@ -30,7 +32,7 @@ def main():
 
     # Verify columns of the cleaned dataframe
     print(cleaned_dataframes[-1].columns)
-    print(cleaned_dataframes[0]['Fy (N)'])
+    print(cleaned_dataframes[0]['Value'][2])
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 # username: tagower
-# date: 2024-11-05 15:13:47
+# date: 2024-11-05 15:35:29
 # dir: /Users/treygower/AERO_SIM_DESIGN/wing/data_ascii
 #
 # Reference area = 4.032250e+00 m2; Density = 1.302135e+00 kg/m3; Dynamic viscosity = 1.838280e-05 Pa-s; Characteristic length = 3.209798e+00 m

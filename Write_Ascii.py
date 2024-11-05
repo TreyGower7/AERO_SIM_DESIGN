@@ -186,8 +186,33 @@ def write_to_file(filename, forces, coefficients, force_type, coef_type, angles)
                 
             file.write("\n")
 
+def write_to_latex(filename, forces, coefficients, force_type, coef_type, angles):
+    with open(filename, "w") as file:
+        for angle in angles:
+            # Write the LaTeX table structure for each angle of attack
+            file.write(r"\begin{table}[H]" + "\n")
+            file.write(r"\centering" + "\n")
+            file.write(r"\begin{tabular}{|c|c|c|c|c|} \hline\n")
+            
+            # Write table headers for the current angle
+            file.write(f"U (m/s) & Re & qinf (Pa) & {force_type} ({angle}°) & {coef_type} ({angle}°) \\\ \hline\n")
+            
+            # Write data rows for each windspeed, Reynolds number, force, and coefficient for the current angle
+            for i in range(len(forces[angle])):
+                windspeed = velocities[angle][i]
+                re = reynolds_numbers[angle][i]
+                qinf = qinf_values[angle][i]
+                
+                # Write the common data (windspeed, Reynolds number, and dynamic pressure) for the current angle
+                file.write(f"{windspeed:.6e} & {re:.6e} & {qinf:.6e} & {forces[angle][i]:.6e} & {coefficients[angle][i]:.6e} \\\ \hline\n")
+            
+            file.write(r"\end{tabular}" + "\n")
+            file.write(f"\\caption{{Flow properties for {force_type} and {coef_type} at AOA = {angle}°}}" + "\n")
+            file.write(r"\label{tab:my_label_" + str(angle) + "}" + "\n")
+            file.write(r"\end{table}" + "\n\n")  # Double newline for spacing between tables
+
+
 # Write files for each force and coefficient type
-# Write files for each force and coefficient type with updated filenames
 write_to_file(os.path.join(output_dir, "Cfx.txt"), forces_x, coefficients_x, "Fx", "Cx", angles)
 write_to_file(os.path.join(output_dir, "Cfy.txt"), forces_y, coefficients_y, "Fy", "Cy", angles)
 write_to_file(os.path.join(output_dir, "Cfz.txt"), forces_z, coefficients_z, "Fz", "Cz", angles)
@@ -195,6 +220,14 @@ write_to_file(os.path.join(output_dir, "Cfz.txt"), forces_z, coefficients_z, "Fz
 write_to_file(os.path.join(output_dir, "Cmx.txt"), moments_x, moment_coefficients_x, "Tx", "Cm_x", angles)
 write_to_file(os.path.join(output_dir, "Cmy.txt"), moments_y, moment_coefficients_y, "Ty", "Cm_y", angles)
 write_to_file(os.path.join(output_dir, "Cmz.txt"), moments_z, moment_coefficients_z, "Tz", "Cm_z", angles)
+
+
+write_to_latex(os.path.join(output_dir, "Cfx_latex.tex"), forces_x, coefficients_x, "Fx", "Cx", angles)
+write_to_latex(os.path.join(output_dir, "Cfy_latex.tex"), forces_x, coefficients_x, "Fy", "Cy", angles)
+write_to_latex(os.path.join(output_dir, "Cfz_latex.tex"), forces_x, coefficients_x, "Fz", "Cz", angles)
+write_to_latex(os.path.join(output_dir, "Cmx_latex.tex"), forces_x, coefficients_x, "Tx", "Cm_x", angles)
+write_to_latex(os.path.join(output_dir, "Cmy_latex.tex"), forces_x, coefficients_x, "Ty", "Cm_y", angles)
+write_to_latex(os.path.join(output_dir, "Cmz_latex.tex"), forces_x, coefficients_x, "Tz", "Cm_z", angles)
 
 
 # Print results for each angle of attack

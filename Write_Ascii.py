@@ -73,21 +73,11 @@ tolerance = .5 # m/s
 # Loop over each index in df for each angle of attack
 for idx, angle in angle_map.items():
     # Initialize lists for the current angle
-    vels = []
-    Res = []
-    qinfs = []
-    Cf_x = []
-    Cf_y = []
-    Cf_z = []
-    Cm_x = []
-    Cm_y = []
-    Cm_z = []
-    F_x = []
-    F_y = []
-    F_z = []
-    T_x = []
-    T_y = []
-    T_z = []
+    vels, Res, qinfs = [], [], []
+    Cf_x, Cf_y, Cf_z = [], [], []
+    Cm_x, Cm_y, Cm_z = [], [], []
+    F_x, F_y, F_z = [], [], []
+    T_x, T_y, T_z = [], [], []
     # Loop over each row in the windspeed column for the current angle's dataframe
     for i in range(len(df[idx]["windspeed(m/s)"].dropna())):
         windspeed = df[idx]["windspeed(m/s)"].iloc[i]

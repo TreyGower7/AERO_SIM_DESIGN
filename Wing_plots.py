@@ -1,10 +1,14 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # Constants
 S = 4.032250  # Reference area in m^2
 L = 3.209798  # Characteristic chord length in m
+base_dir = "/Users/treygower/AERO_SIM_DESIGN/wing/plots"
+os.makedirs(base_dir, exist_ok=True)
+
 
 def get_data(filepath):
     """Load the Excel file and each sheet into separate DataFrames."""
@@ -82,6 +86,81 @@ def calculate_values(df, angle, tolerance=0.5):
         "moments_z": T_z
     }
 
+def plot(results, angle_map):
+
+    # Plotting Coefficient vs Velocity
+    for angle in angle_map.values():
+        data = results[angle]
+
+        # Cf vs U
+        plt.figure(figsize=(10, 6))
+        plt.plot(data['velocities'], data['coefficients_x'], label='Cf_x', color='b', alpha=0.7)
+        plt.plot(data['velocities'], data['coefficients_y'], label='Cf_y', color='g', alpha=0.7)
+        plt.plot(data['velocities'], data['coefficients_z'], label='Cf_z', color='r', alpha=0.7)
+        #plt.title(f'Force Coefficients at Angle of Attack {angle}°')
+        plt.xlabel('Velocity (m/s)')
+        plt.ylabel('Force Coefficient')
+        plt.grid()
+        plt.legend()
+        plt.savefig(f"{base_dir}/U_vs_Cf_AOA_({angle}).png")
+        
+        # Cm vs U
+        plt.figure(figsize=(10, 6))
+        plt.plot(data['velocities'], data['moment_coefficients_x'], label='Cm_x', color='b', alpha=0.7)
+        plt.plot(data['velocities'], data['moment_coefficients_y'], label='Cm_y', color='g', alpha=0.7)
+        plt.plot(data['velocities'], data['moment_coefficients_z'], label='Cm_z', color='r', alpha=0.7)
+        #plt.title(f'Moment Coefficients at Angle of Attack {angle}° vs U')
+        plt.xlabel('Velocity (m/s)')
+        plt.ylabel('Moment Coefficient')
+        plt.grid()
+        plt.legend()
+        plt.savefig(f"{base_dir}/U_vs_Cm_AOA_({angle}).png")
+
+    # Plotting Coefficient vs AOA
+
+    # Average coefficient lists
+    avg_Cf_x = []
+    avg_Cf_y = []
+    avg_Cf_z = []
+    avg_Cm_x = []
+    avg_Cm_y = []
+    avg_Cm_z = []
+    # Need average Cf for each AOA
+    for angle in angle_map.values():
+        avg_Cf_x.append(np.mean(results[angle]["coefficients_x"]))
+        avg_Cf_y.append(np.mean(results[angle]["coefficients_y"]))
+        avg_Cf_z.append(np.mean(results[angle]["coefficients_z"]))
+        avg_Cm_x.append(np.mean(results[angle]["moment_coefficients_x"]))
+        avg_Cm_y.append(np.mean(results[angle]["moment_coefficients_y"]))
+        avg_Cm_z.append(np.mean(results[angle]["moment_coefficients_z"]))
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(angle_map.keys(), avg_Cf_x, label='Average Cf_x', color='b', marker='o')
+    plt.plot(angle_map.keys(), avg_Cf_y, label='Average Cf_y', color='g', marker='o')
+    plt.plot(angle_map.keys(), avg_Cf_z, label='Average Cf_z', color='r', marker='o')
+    #plt.title('Average Force Coefficients vs Angle of Attack')
+    plt.xlabel('Angle of Attack (°)')
+    plt.ylabel('Average Force Coefficient')
+    plt.xticks(list(angle_map.keys()))  # Set x-ticks to be the AOA values
+    plt.grid()
+    plt.legend()
+    plt.savefig(f"{base_dir}/Cf_vs_AOA.png")
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(angle_map.keys(), avg_Cm_x, label='Average Cm_x', color='c', marker='o')
+    plt.plot(angle_map.keys(), avg_Cm_y, label='Average Cm_y', color='m', marker='o')
+    plt.plot(angle_map.keys(), avg_Cm_z, label='Average Cm_z', color='y', marker='o')
+    #plt.title('Average Moment Coefficients vs Angle of Attack')
+    plt.xlabel('Angle of Attack (°)')
+    plt.ylabel('Average Moment Coefficient')
+    plt.xticks(list(angle_map.keys()))  # Set x-ticks to be the AOA values
+    plt.grid()
+    plt.legend()
+    plt.savefig(f"{base_dir}/Cm_vs_AOA.png")
+
+    
+
+
 def main():
     filepath = '/Users/treygower/Library/CloudStorage/OneDrive-TheUniversityofTexasatAustin/Aerodynamic_Testing_Wing.xlsx'
     
@@ -99,6 +178,7 @@ def main():
     angle_map = {0: -2.5, 1: 0, 2: 2.5, 3: 5, 4: 10, 5: 12.5}
     results = {angle: calculate_values(clean_df[idx], angle) for idx, angle in angle_map.items()}
     
+    plot(results,angle_map)
     # Print results for each angle of attack
     for angle in angle_map.values():
         print(f"Angle of Attack {angle}°:")

@@ -195,7 +195,7 @@ def write_to_latex(filename, forces, coefficients, force_type, coef_type, angles
             file.write(r"\begin{tabular}{|c|c|c|c|c|} \hline\n")
             
             # Write table headers for the current angle
-            file.write(f"U (m/s) & Re & qinf (Pa) & {force_type} ({angle}°) & {coef_type} ({angle}°) \\\ \hline\n")
+            file.write(f"U (m/s) & Re & $q_\infty$ (Pa) & {force_type} ({angle}°) & {coef_type} ({angle}°) \\\ \hline\n")
             
             # Write data rows for each windspeed, Reynolds number, force, and coefficient for the current angle
             for i in range(len(forces[angle])):

@@ -36,7 +36,7 @@ def calc_Qinf(U):
     return 0.5 * rho * (U ** 2)
 
 def calc_coefficient(F, q):
-    return F / (q * S)
+    return F / (q * c^2)
 
     # Define the file path for the input data
 filepath = '/Users/treygower/Library/CloudStorage/OneDrive-TheUniversityofTexasatAustin/Aerodynamic_Testing_Wing.xlsx'
@@ -45,12 +45,7 @@ filepath = '/Users/treygower/Library/CloudStorage/OneDrive-TheUniversityofTexasa
 df = get_data(filepath)
 df = clean_data(df)
 
-# Constants
-S = 4.032250  # Reference area in m^2
-L = 3.209798  # Characteristic chord length in m
-rho = df[0]["Value"][1]  # Air density in kg/m^3
-mu = df[0]["Value"][2]  # Dynamic viscosity in Pa-s
-nu = df[0]["Value"][3]  # Kinematic viscosity in m^2/s
+
 
 # Mapping of indices to angles of attack
 angle_map = {0: -2.5, 1: 0, 2: 2.5, 3: 5, 4: 10, 5: 12.5}
@@ -186,30 +181,51 @@ def write_to_file(filename, forces, coefficients, force_type, coef_type, angles)
                 
             file.write("\n")
 
-def write_to_latex(filename, forces, coefficients, force_type, coef_type, angles):
+def write_to_latex(filename, angles, reynolds_numbers, velocities,
+                   coefficients_x, coefficients_y, coefficients_z,
+                   moment_coefficients_x, moment_coefficients_y, moment_coefficients_z):
+    
     with open(filename, "w") as file:
         for angle in angles:
+            # Convert to lists if any element is mistakenly stored as a single float
+            reynolds_numbers[angle] = np.atleast_1d(reynolds_numbers[angle])
+            velocities[angle] = np.atleast_1d(velocities[angle])
+            coefficients_x[angle] = np.atleast_1d(coefficients_x[angle])
+            coefficients_y[angle] = np.atleast_1d(coefficients_y[angle])
+            coefficients_z[angle] = np.atleast_1d(coefficients_z[angle])
+            moment_coefficients_x[angle] = np.atleast_1d(moment_coefficients_x[angle])
+            moment_coefficients_y[angle] = np.atleast_1d(moment_coefficients_y[angle])
+            moment_coefficients_z[angle] = np.atleast_1d(moment_coefficients_z[angle])
+
             # Write the LaTeX table structure for each angle of attack
             file.write(r"\begin{table}[H]" + "\n")
             file.write(r"\centering" + "\n")
-            file.write(r"\begin{tabular}{|c|c|c|c|c|} \hline\n")
+            file.write(r"\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline\n")
             
             # Write table headers for the current angle
-            file.write(f"U (m/s) & Re & $q_\infty$ (Pa) & {force_type} ({angle}°) & {coef_type} ({angle}°) \\\ \hline\n")
+            file.write(r"Reynolds number & Flow velocity (m/s) & $C_{F_x}$ & $C_{F_y}$ & $C_{F_z}$ & $C_{M_x}$ & $C_{M_y}$ & $C_{M_z}$ \\ \hline\n")
             
-            # Write data rows for each windspeed, Reynolds number, force, and coefficient for the current angle
-            for i in range(len(forces[angle])):
-                windspeed = velocities[angle][i]
+            # Write data rows for each Reynolds number, velocity, force, and moment coefficients
+            for i in range(len(reynolds_numbers[angle])):
                 re = reynolds_numbers[angle][i]
-                qinf = qinf_values[angle][i]
+                velocity = velocities[angle][i]
+                cf_x = coefficients_x[angle][i]
+                cf_y = coefficients_y[angle][i]
+                cf_z = coefficients_z[angle][i]
+                cm_x = moment_coefficients_x[angle][i]
+                cm_y = moment_coefficients_y[angle][i]
+                cm_z = moment_coefficients_z[angle][i]
                 
-                # Write the common data (windspeed, Reynolds number, and dynamic pressure) for the current angle
-                file.write(f"{windspeed:.6e} & {re:.6e} & {qinf:.6e} & {forces[angle][i]:.6e} & {coefficients[angle][i]:.6e} \\\ \hline\n")
+                # Write the data row
+                file.write(f"{re} & {velocity:.1f} & {cf_x:.3f} & {cf_y:.3f} & {cf_z:.3f} & {cm_x:.3f} & {cm_y:.3f} & {cm_z:.3f} \\\ \hline\n")
             
+            # Close the table for the current angle
             file.write(r"\end{tabular}" + "\n")
-            file.write(f"\\caption{{Flow properties for {force_type} and {coef_type} at AOA = {angle}°}}" + "\n")
-            file.write(r"\label{tab:my_label_" + str(angle) + "}" + "\n")
+            file.write(f"\\caption{{Force and moment coefficients experienced by the wing at angle of attack = {angle}°}}" + "\n")
+            file.write(r"\label{{tab:my_label_{angle}}}" + "\n")
             file.write(r"\end{table}" + "\n\n")  # Double newline for spacing between tables
+
+
 
 
 # Write files for each force and coefficient type
@@ -222,12 +238,14 @@ write_to_file(os.path.join(output_dir, "Cmy.txt"), moments_y, moment_coefficient
 write_to_file(os.path.join(output_dir, "Cmz.txt"), moments_z, moment_coefficients_z, "Tz", "Cm_z", angles)
 
 
-write_to_latex(os.path.join(output_dir, "Cfx_latex.tex"), forces_x, coefficients_x, "Fx", "Cx", angles)
-write_to_latex(os.path.join(output_dir, "Cfy_latex.tex"), forces_x, coefficients_x, "Fy", "Cy", angles)
-write_to_latex(os.path.join(output_dir, "Cfz_latex.tex"), forces_x, coefficients_x, "Fz", "Cz", angles)
-write_to_latex(os.path.join(output_dir, "Cmx_latex.tex"), forces_x, coefficients_x, "Tx", "Cm_x", angles)
-write_to_latex(os.path.join(output_dir, "Cmy_latex.tex"), forces_x, coefficients_x, "Ty", "Cm_y", angles)
-write_to_latex(os.path.join(output_dir, "Cmz_latex.tex"), forces_x, coefficients_x, "Tz", "Cm_z", angles)
+write_to_latex(
+    os.path.join(output_dir, "tables_latex.tex"), 
+    angles, 
+    reynolds_numbers, 
+    velocities, 
+    coefficients_x, coefficients_y, coefficients_z, 
+    moment_coefficients_x, moment_coefficients_y, moment_coefficients_z
+)
 
 
 # Print results for each angle of attack
